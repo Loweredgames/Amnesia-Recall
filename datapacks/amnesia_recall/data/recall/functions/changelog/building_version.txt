@@ -9,8 +9,8 @@ Resource_pack: TRUE
 
 Data_pack: TRUE
 
-Github: https://github.com/Lorenzo0310200/Amnesia-recall
-
 Github_Tag: JE-1a
+
+Github: https://github.com/Lorenzo0310200/Amnesia-recall
 
 Website:https://minecraft-map-building-versions.blogspot.com/

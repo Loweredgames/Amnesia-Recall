@@ -1,3 +1,10 @@
+#Copyright (C) Loweredgames (Lorenzo Giannini) 
+#Contacted:<https://github.com/Loweredgames>
+#This Source Code Form is subject to the terms of the License.
+#NOT OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG STUDIO.
+#READING THE COPYRIGHT (C): <https://www.minecraft.net/en-us/terms>
+
+
 difficulty hard
 recipe take @a *
 xp set @a 0 points
@@ -13,3 +20,4 @@ function recall_story:story_1
 function recall_story:story_2
 effect give @a minecraft:night_vision 21 0 true
 #clear @a minecraft:item_frame
+fare versione

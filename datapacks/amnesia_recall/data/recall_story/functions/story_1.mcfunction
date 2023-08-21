@@ -1,3 +1,10 @@
+#Copyright (C) Loweredgames (Lorenzo Giannini) 
+#Contacted:<https://github.com/Loweredgames>
+#This Source Code Form is subject to the terms of the License.
+#NOT OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG STUDIO.
+#READING THE COPYRIGHT (C): <https://www.minecraft.net/en-us/terms>
+
+
 scoreboard players add @a story_1 1
 
 execute at @a[scores={story_1=1}] run tp @a 996.40 121.00 66.47 244.77 6.60
