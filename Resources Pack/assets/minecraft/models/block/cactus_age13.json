@@ -1,0 +1,58 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"3": "block/cactus_side_ext",
+		"bottom": "block/cactus_bottom",
+		"top": "block/cactus_top",
+		"particle": "block/cactus_side",
+		"side": "block/cactus_side"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#top", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [1, 0, 0],
+			"to": [15, 16, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#side"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#side"}
+			}
+		},
+		{
+			"from": [0, 0, 1],
+			"to": [16, 16, 15],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#side"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#side"}
+			}
+		},
+		{
+			"from": [-14, 0, 3],
+			"to": [-4, 16, 13],
+			"faces": {
+				"north": {"uv": [1, 0, 11, 16], "texture": "#3"},
+				"east": {"uv": [1, 0, 11, 16], "texture": "#3"},
+				"south": {"uv": [1, 0, 11, 16], "texture": "#3"},
+				"west": {"uv": [1, 0, 11, 16], "texture": "#3"},
+				"up": {"uv": [4, 4, 12, 12], "rotation": 270, "texture": "#top"},
+				"down": {"uv": [4, 4, 12, 12], "rotation": 90, "texture": "#bottom"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "cactus_age8",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+    "pack": {
+        "pack_format": 10,
+        "description": "Disable Advancements Generic Datapack"
+    },
+    "filter": {
+        "block": [
+            {
+                "namespace": "minecraft",
+                "path": "advancements/.*"
+            }
+        ]
+    }
+}
