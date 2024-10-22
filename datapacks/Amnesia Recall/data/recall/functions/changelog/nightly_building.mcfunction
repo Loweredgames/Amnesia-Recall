@@ -18,7 +18,7 @@ bossbar set minecraft:nightly_building value 100
 
 
 ##NIGHTLY BUILDING VERSION NUMBER (NUMERO DELLA VERSIONE VISTO IN ALTRO, SOLO NELLE VERSIONI DI SVILUPPO)
-bossbar set nightly_building name {"text":"nome-edizione,numero versione di Minecraft stabile,numero versione di Minecraft snapshots,nome_progetto:NIGHTLY_BUILDING:giorno,mese,anno,versione-aggiuntiva-con-numero,orario_attuale_tutto_attaccato,correzioni_[(METTERE NOME DEL BRANCHES QUI. NON RIMUOVERE LE PARENTESI QUADRE SE C'E UN BRANCHES)]","color":"white","bold":true}
+bossbar set nightly_building name {"text":"JE-1.20.6-1.0.0-Amnesia_Recall:NIGHTLY_BUILDING:22.10.2024.11905a_[main]","color":"white","bold":true}
 
 
 ##NIGHTLY BUILDING VERSION (BOSSBAR VISIBILE: SOLO PER GIT, DISABILITARE PER I RILASCI)
