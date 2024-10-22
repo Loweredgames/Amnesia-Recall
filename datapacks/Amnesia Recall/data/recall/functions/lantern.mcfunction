@@ -11,8 +11,8 @@ scoreboard objectives add AmnesiaRecall_drop_quartz minecraft.dropped:minecraft.
 scoreboard objectives add AmnesiaRecall_lantern dummy
 scoreboard objectives add AmnesiaRecall_oil dummy
 scoreboard objectives add AmnesiaRecall_oil_vision dummy
-scoreboard objectives setdisplay sidebar AmnesiaRecall_oil
-
+#scoreboard objectives setdisplay sidebar AmnesiaRecall_oil
+#Da sistemare
 
 ##Drop Lantern
 execute if entity @a[nbt={SelectedItem:{id:"minecraft:lantern",count:1,tag:{display:{Name:'{"text":"Lantern","color":"gold","bold":true}'},HideFlags:39}}}] run scoreboard players add @a AmnesiaRecall_lantern 1
