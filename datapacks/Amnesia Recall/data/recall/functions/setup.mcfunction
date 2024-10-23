@@ -33,7 +33,7 @@ function recall_story:story_2
 
 
 ##Gamerules
-#FARE
+#FARE Gamerules
 
 
 ##Dev (Solo versioni di sviluppo)
