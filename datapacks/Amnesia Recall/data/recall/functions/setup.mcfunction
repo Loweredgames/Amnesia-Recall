@@ -20,7 +20,6 @@ item replace entity @a armor.feet with leather_boots[unbreakable={show_in_toolti
 
 ##Function Setup
 function recall:changelog/building
-function recall:changelog/nightly_building
 function recall:lantern
 function recall:sanity
 function recall:items
