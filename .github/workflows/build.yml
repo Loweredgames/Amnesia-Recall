@@ -1,0 +1,101 @@
+# Nome del workflow
+name: Create Builds
+
+# Trigger del workflow - modifica per il tuo progetto
+on:
+  push:
+    paths:
+      # Modifica questo percorso con il percorso del tuo file di versione <<< IMPORTANTE
+      - 'path/to/your/version.json'
+
+jobs:
+  # Job per controllare i cambiamenti nel file
+  check_changes:
+    runs-on: ubuntu-24.04
+    outputs:
+      # Output che indicano quali build devono essere create
+      release_changed: ${{ steps.check.outputs.release_changed }}
+      nightly_changed: ${{ steps.check.outputs.nightly_changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Necessario per confrontare con il commit precedente
+
+      - name: Check changes
+        id: check
+        shell: bash
+        run: |
+          # Modifica questo percorso con il percorso del tuo file di versione <<< IMPORTANTE
+          FILE="path/to/your/version.json"
+          
+          # Gestione del primo commit
+          if ! git rev-parse HEAD^ >/dev/null 2>&1; then
+            echo "Primo commit - imposta entrambe le build come modificate"
+            echo "release_changed=true" >> "$GITHUB_OUTPUT"
+            echo "nightly_changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          
+          # Confronta le versioni tra commit precedente e attuale
+          # Modifica "Release Building" e "Nightly Building" con i tuoi campi da monitorare <<< Se è vecchio il file devi aggiungere "Nightly Building"
+          OLD_RELEASE=$(git show HEAD^:"$FILE" | grep '"Release Building"' || echo "")
+          NEW_RELEASE=$(git show HEAD:"$FILE" | grep '"Release Building"' || echo "")
+          OLD_NIGHTLY=$(git show HEAD^:"$FILE" | grep '"Nightly Building"' || echo "")
+          NEW_NIGHTLY=$(git show HEAD:"$FILE" | grep '"Nightly Building"' || echo "")
+          
+          # Verifica i cambiamenti
+          if [ "$OLD_RELEASE" != "$NEW_RELEASE" ]; then
+            echo "release_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "release_changed=false" >> "$GITHUB_OUTPUT"
+          fi
+          
+          if [ "$OLD_NIGHTLY" != "$NEW_NIGHTLY" ]; then
+            echo "nightly_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "nightly_changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  # Job per la build release
+  release_build:
+    needs: check_changes
+    if: needs.check_changes.outputs.release_changed == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload release content
+        uses: actions/upload-artifact@v4
+        with:
+          # Modifica il nome dell'artefatto secondo le tue esigenze <<< IMPORTANTE
+          name: Your_Project_Latest
+          path: |
+            .
+            # Escludi i file non necessari
+            !.git/
+            !.github/
+            !.gitignore
+            # Aggiungi qui altre esclusioni specifiche del tuo progetto <<< IMPORTANTE
+          if-no-files-found: error
+          retention-days: 60  # Modifica la durata di conservazione se necessario
+
+  # Job per la build nightly
+  nightly_build:
+    needs: check_changes
+    if: needs.check_changes.outputs.nightly_changed == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload nightly content
+        uses: actions/upload-artifact@v4
+        with:
+          # Modifica il nome dell'artefatto secondo le tue esigenze <<< IMPORTANTE
+          name: Your_Project_Nightly
+          path: |
+            # Stesse regole di inclusione/esclusione della release
+            .
+            !.git/
+            !.github/
+            !.gitignore
+            # Aggiungi qui altre esclusioni specifiche del tuo progetto <<< IMPORTANTE
+          if-no-files-found: error
+          retention-days: 60 # Modifica la durata di conservazione se necessario
