@@ -37,5 +37,5 @@ function recall_story:story_2
 
 
 ##Dev (Solo versioni di sviluppo)
-effect give @a minecraft:night_vision 21 0 true
+#effect give @a minecraft:night_vision 21 0 true
 #clear @a minecraft:item_frame

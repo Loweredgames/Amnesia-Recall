@@ -3,7 +3,9 @@
 
 "Release Versions": "1.0.0 [Release Update]",
 
-"Nightly Building": "JE-1.20.6-1.0.0-Amnesia_Recall:NIGHTLY_BUILDING:25.05.2025.11232a_[main]",
+"Release Building": "JE-1.20.6-1.0.0-Amnesia_Recall:BUILDING:22.10.2024a",
+
+"Nightly Building": "JE-1.20.6-1.0.0-Amnesia_Recall:NIGHTLY_BUILDING:25.05.2025.21232a_[main]",
 
 "Resource_pack": "TRUE",
 

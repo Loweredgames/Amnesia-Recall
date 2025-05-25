@@ -37,7 +37,7 @@ execute at @a[scores={AmnesiaRecall_sanity=200..800}] run playsound minecraft:am
 execute at @a[scores={AmnesiaRecall_sanity=800..}] run playsound minecraft:ambient.crimson_forest.additions ambient @a ~ ~ ~ 1 2
 execute at @a[scores={AmnesiaRecall_sanity=1000..}] run effect give @a minecraft:blindness 6 0 true 
 execute at @a[scores={AmnesiaRecall_sanity=1500..}] run playsound minecraft:ambient.crimson_forest.mood ambient @a ~ ~ ~ 1 2
-execute at @a[scores={AmnesiaRecall_sanity=0..}] run item replace entity @p armor.head with player_head[custom_name='{"bold":true,"text":"Jonny Bohm Schliemann\'s"}',enchantments={levels:{"minecraft:binding_curse":1},show_in_tooltip:false},hide_additional_tooltip={}] 1
+execute at @a[scores={AmnesiaRecall_sanity=1700..}] run item replace entity @p armor.head with carved_pumpkin[custom_name='{"bold":true,"text":"Jonny Bohm Schliemann\'s"}',enchantments={levels:{"minecraft:binding_curse":1},show_in_tooltip:false},hide_additional_tooltip={}] 1
 execute at @a[scores={AmnesiaRecall_sanity=1700..}] run playsound ambient.nether_wastes.mood ambient @a ~ ~ ~ 1 2
 execute at @a[scores={AmnesiaRecall_sanity=1800..2001}] run playsound minecraft:ambient.cave ambient @a ~ ~ ~ 1 2
 execute at @a[scores={AmnesiaRecall_sanity=2000..}] run playsound minecraft:ambient.cave ambient @a ~ ~ ~ 1 2
