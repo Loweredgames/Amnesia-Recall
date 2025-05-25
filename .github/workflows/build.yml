@@ -6,7 +6,7 @@ on:
   push:
     paths:
       # Modifica questo percorso con il percorso del tuo file di versione <<< IMPORTANTE
-      - 'path/to/your/version.json'
+      - 'datapacks/Amnesia Recall/data/recall/functions/changelog/building_version.json'
 
 jobs:
   # Job per controllare i cambiamenti nel file
@@ -26,7 +26,7 @@ jobs:
         shell: bash
         run: |
           # Modifica questo percorso con il percorso del tuo file di versione <<< IMPORTANTE
-          FILE="path/to/your/version.json"
+          FILE="datapacks/Amnesia Recall/data/recall/functions/changelog/building_version.json"
           
           # Gestione del primo commit
           if ! git rev-parse HEAD^ >/dev/null 2>&1; then
@@ -67,7 +67,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           # Modifica il nome dell'artefatto secondo le tue esigenze <<< IMPORTANTE
-          name: Your_Project_Latest
+          name: Amnesia_Recall_Latest
           path: |
             .
             # Escludi i file non necessari
@@ -89,7 +89,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           # Modifica il nome dell'artefatto secondo le tue esigenze <<< IMPORTANTE
-          name: Your_Project_Nightly
+          name: Amnesia_Recall_Nightly
           path: |
             # Stesse regole di inclusione/esclusione della release
             .
