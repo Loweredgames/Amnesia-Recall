@@ -25,7 +25,7 @@ execute at @a[scores={AmnesiaRecall_lantern=1..}] run scoreboard players set @a 
 
 
 ##Drop Lantern
-execute if entity @a[nbt={SelectedItem:{id:"minecraft:lantern",count:1,components:{"minecraft:custom_name":'{"text":"Lantern","color":"gold","bold":true}'}}}] run scoreboard players add @a AmnesiaRecall_lantern 1
+#Vecchio? execute if entity @a[nbt={SelectedItem:{id:"minecraft:lantern",count:1,components:{"minecraft:custom_name":'{"text":"Lantern","color":"gold","bold":true}'}}}] run scoreboard players add @a AmnesiaRecall_lantern 1
 execute if entity @e[type=item,nbt={Item:{id:"minecraft:lantern",count:1}}] run scoreboard players add @a AmnesiaRecall_lantern 1
 
 
@@ -47,7 +47,7 @@ execute at @a[scores={AmnesiaRecall_drop_quartz=0..}] run kill @e[type=item,nbt=
 
 ##Lantern Oil ON
 execute at @a[scores={AmnesiaRecall_oil=..-1}] run scoreboard players set @a AmnesiaRecall_oil 0
-execute if entity @a[scores={AmnesiaRecall_oil=1..100000},nbt={SelectedItem:{id:"minecraft:lantern",count:1,components:{"minecraft:custom_name":'{"text":"Lantern","color":"gold","bold":true}'}}}] run scoreboard players set @a AmnesiaRecall_oil_vision 1
+execute if entity @e[type=item,scores={AmnesiaRecall_oil=1..100000},nbt={Item:{id:"minecraft:lantern",count:1}}] run scoreboard players add @a AmnesiaRecall_oil_vision 1
 
 
 ##Lantern Oil OFF

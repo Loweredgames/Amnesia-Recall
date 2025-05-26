@@ -10,6 +10,7 @@ recipe take @a *
 difficulty hard
 xp set @a 0 points
 xp set @a 0 levels
+#clear @a minecraft:item_frame
 
 
 ##Clothes Setup
@@ -36,5 +37,4 @@ function recall_story:story_2
 
 
 ##Dev (Solo versioni di sviluppo)
-#effect give @a minecraft:night_vision 21 0 true
-#clear @a minecraft:item_frame
+effect give @a minecraft:night_vision 21 0 true

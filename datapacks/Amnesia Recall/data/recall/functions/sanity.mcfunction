@@ -30,7 +30,7 @@ execute at @a[scores={AmnesiaRecall_sanity_sprain=1..22}] if block ~ ~-3 ~ minec
 ##Sanity Levels
 execute at @a if block ~ ~-2 ~ minecraft:dried_kelp_block run scoreboard players add @a AmnesiaRecall_sanity 1
 execute at @a if block ~ ~-3 ~ minecraft:dried_kelp_block run scoreboard players add @a AmnesiaRecall_sanity 1
-execute at @a[scores={AmnesiaRecall_sanity=0..}] run item replace entity @p armor.head with player_head[custom_name='{"bold":true,"text":"Jonny Bohm Schliemann\'s"}',enchantments={levels:{"minecraft:binding_curse":1},show_in_tooltip:false},hide_additional_tooltip={}] 1
+execute at @a[scores={AmnesiaRecall_sanity=0..1700}] run item replace entity @p armor.head with player_head[custom_name='{"bold":true,"text":"Jonny Bohm Schliemann\'s"}',enchantments={levels:{"minecraft:binding_curse":1},show_in_tooltip:false},hide_additional_tooltip={}] 1
 execute at @a[scores={AmnesiaRecall_sanity=..-1}] run scoreboard players set @a AmnesiaRecall_sanity 0
 execute at @a[scores={AmnesiaRecall_sanity=100..200}] run playsound minecraft:block.conduit.ambient.short ambient @a ~ ~ ~ 1 2
 execute at @a[scores={AmnesiaRecall_sanity=200..800}] run playsound minecraft:ambient.crimson_forest.loop ambient @a ~ ~ ~ 1 2
